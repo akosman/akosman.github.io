@@ -75,22 +75,24 @@ header{
     max-height:100%;
 }
 
-.choice:hover{
-    cursor: pointer;
-    background: #004735;
-}
-
 @media (max-width: 600px) {
     .choices{
         display: flex;
     }
     .choice{
         width: 33%;
+    }  
+}
+
+@media(hover: none) and (pointer: coarse){
+    .choice:active{
+        background: #004735;
     }
-    @media(hover: none) and (pointer: coarse){
-        .choice:hover{
-            background: inherit;
-        }
+}
+
+@media(hover: hover){
+    .choice:hover{
+        cursor: pointer;
+        background: #004735;
     }
-    
-  }
+}
