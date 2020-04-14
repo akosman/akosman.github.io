@@ -84,13 +84,13 @@ header{
     }  
 }
 
-@media(hover: none) and (pointer: coarse){
+@media(pointer:coarse){
     .choice:active{
         background: #004735;
     }
 }
 
-@media(hover: hover){
+@media(pointer:fine){
     .choice:hover{
         cursor: pointer;
         background: #004735;
