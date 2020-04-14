@@ -50,7 +50,7 @@ function PlayerWin(compChoice) {
     playerWon_span.innerHTML = playerWon;
     compLost++;
     compLost_span.innerHTML = compLost;
-    result_div.innerHTML = "Nyertél<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott";
+    result_div.innerHTML = "Nyertél!<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott";
     EndGame();
 }
 function PlayerLose(compChoice) {
