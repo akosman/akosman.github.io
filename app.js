@@ -43,12 +43,12 @@ function PlayerLose(compChoice){
     playerLost++;
     playerLost_span.innerHTML = playerLost;
     compWon++;
-    compLost_span.innerHTML = compLost;
+    compWon_span.innerHTML = compWon;
     result_div.innerHTML = "Vesztettél :( A gép a következőt választotta: " + Translate(compChoice); 
 }
 function Draw(compChoice){
     draw++;
-    draw_span.innerHTML = draw++;
+    draw_span.innerHTML = draw;
     result_div.innerHTML = "Döntetlen. A gép a következőt választotta: " + Translate(compChoice); 
 }
 function PlayGame(playerChoice){
