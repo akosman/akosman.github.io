@@ -79,3 +79,12 @@ header{
     cursor: pointer;
     background: #004735;
 }
+
+@media (max-width: 600px) {
+    .choices{
+        display: flex;
+    }
+    .choice{
+        width: 33%;
+    }
+  }
