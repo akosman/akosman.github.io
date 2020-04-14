@@ -87,7 +87,10 @@ header{
     .choice{
         width: 33%;
     }
-    .choice:hover, choice:active{
-        background: #004735;
+    @media(hover: none) and (pointer: coarse){
+        .choice:hover{
+            background: inherit;
+        }
     }
+    
   }
