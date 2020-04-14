@@ -17,39 +17,48 @@ var scissors_div = document.getElementById("scissors");
 
 function GetCompChoice(){
     var choices = ["rock", "paper", "scissors"];
-    var randNum = Math.round(Math.random() * 3);
+    var randNum = Math.floor(Math.random() * 3);
     return choices[randNum];
 }
 
 function Translate(word){
     switch (word){
         case "rock":
-            return "kő";
+            return "követ";
         case "paper":
-            return "papír";
+            return "papírt";
         case "scissors":
-            return "olló";
+            return "ollót";
     }
 }
+function EndGame(option){
+    setTimeout(() => {
+    result_div.innerHTML = "<br>Válassz az alábbi lehetőségek közül:"
+}, 1400);
+}
+
 
 function PlayerWin(compChoice){
     playerWon++;
     playerWon_span.innerHTML = playerWon;
     compLost++;
     compLost_span.innerHTML = compLost;
-    result_div.innerHTML = "Nyertél! A gép a következőt választotta: " + Translate(compChoice); 
+    result_div.innerHTML = "Nyertél<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott" ; 
+    EndGame();
 }
 function PlayerLose(compChoice){
     playerLost++;
     playerLost_span.innerHTML = playerLost;
     compWon++;
     compWon_span.innerHTML = compWon;
-    result_div.innerHTML = "Vesztettél :( A gép a következőt választotta: " + Translate(compChoice); 
+    result_div.innerHTML = "Vesztettél!<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott" ; 
+    EndGame();
 }
 function Draw(compChoice){
     draw++;
     draw_span.innerHTML = draw;
-    result_div.innerHTML = "Döntetlen. A gép a következőt választotta: " + Translate(compChoice); 
+    result_div.innerHTML = "Döntetlen.<br>Az ellenfél is<b>" + Translate(compChoice) + "</b>választott" ; 
+    EndGame();
 }
 function PlayGame(playerChoice){
     var compChoice = GetCompChoice();
