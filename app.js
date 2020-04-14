@@ -14,15 +14,28 @@ var result_div = document.querySelector(".result");
 var rock_div = document.getElementById("rock");
 var paper_div = document.getElementById("paper");
 var scissors_div = document.getElementById("scissors");
+var playerNameTag_p = document.getElementById("player-nametag");
+var compNameTag_p = document.getElementById("comp-nametag");
 
-function GetCompChoice(){
-    var choices = ["rock", "paper", "scissors"];
-    var randNum = Math.floor(Math.random() * 3);
-    return choices[randNum];
+function EndGame(option) {
+    if (compWon > playerWon) {
+        compNameTag_p.innerHTML = "Gép 👑";
+    }
+    else if (playerWon > compWon) {
+        playerNameTag_p.innerHTML = "Játékos 👑";
+    }
+    else {
+        playerNameTag_p.innerHTML = "Játékos";
+        compNameTag_p.innerHTML = "Gép";
+    }
+
+    setTimeout(() => {
+        result_div.innerHTML = "<br>Válassz az alábbi lehetőségek közül:";
+    }, 1400);
 }
 
-function Translate(word){
-    switch (word){
+function Translate(word) {
+    switch (word) {
         case "rock":
             return "követ";
         case "paper":
@@ -31,38 +44,39 @@ function Translate(word){
             return "ollót";
     }
 }
-function EndGame(option){
-    setTimeout(() => {
-    result_div.innerHTML = "<br>Válassz az alábbi lehetőségek közül:"
-}, 1400);
-}
 
-
-function PlayerWin(compChoice){
+function PlayerWin(compChoice) {
     playerWon++;
     playerWon_span.innerHTML = playerWon;
     compLost++;
     compLost_span.innerHTML = compLost;
-    result_div.innerHTML = "Nyertél<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott" ; 
+    result_div.innerHTML = "Nyertél<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott";
     EndGame();
 }
-function PlayerLose(compChoice){
+function PlayerLose(compChoice) {
     playerLost++;
     playerLost_span.innerHTML = playerLost;
     compWon++;
     compWon_span.innerHTML = compWon;
-    result_div.innerHTML = "Vesztettél!<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott" ; 
+    result_div.innerHTML = "Vesztettél!<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott";
     EndGame();
 }
-function Draw(compChoice){
+function Draw(compChoice) {
     draw++;
     draw_span.innerHTML = draw;
-    result_div.innerHTML = "Döntetlen.<br>Az ellenfél is<b>" + Translate(compChoice) + "</b>választott" ; 
+    result_div.innerHTML = "Döntetlen.<br>Az ellenfél is<b>" + Translate(compChoice) + "</b>választott";
     EndGame();
 }
-function PlayGame(playerChoice){
+
+function GetCompChoice() {
+    var choices = ["rock", "paper", "scissors"];
+    var randNum = Math.floor(Math.random() * 3);
+    return choices[randNum];
+}
+
+function PlayGame(playerChoice) {
     var compChoice = GetCompChoice();
-    switch(playerChoice + compChoice){
+    switch (playerChoice + compChoice) {
         case "rockscissors":
         case "scissorspaper":
         case "paperrock":
