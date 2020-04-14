@@ -87,4 +87,7 @@ header{
     .choice{
         width: 33%;
     }
+    .choice:hover, choice:active{
+        background: #004735;
+    }
   }
