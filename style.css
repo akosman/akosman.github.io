@@ -2,13 +2,13 @@
     margin: 2%;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body{
     background-color:#f8dd74;
     color: white;
-
+    margin-bottom: 0;
 }
 
 header{
@@ -17,6 +17,12 @@ header{
     padding: 50px 0;
     margin: 0;
     padding-bottom: 70px;
+}
+
+footer{
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-family: Bahnschrift;
 }
 #scores-head{
     margin-bottom: 0;
@@ -34,17 +40,26 @@ header{
 
 }
 
+.scores > span{
+    color: #004735;
+}
+
 .tag{
-    margin:0;
-    padding: 2px 4px;
+    margin: 0;
+    padding: 4px;
     background: #3b7f74;
     color: white;
     font-weight: 500;
 }
+#player-crown{
+    font-size: small;
+    margin: 2px;
+}
 
+#comp-crown{
+    font-size: small;
+    margin: 2px;
 
-.scores > span{
-    color: #004735;
 }
 
 .result{

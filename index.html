@@ -18,19 +18,19 @@
 
     <p id="scores-head">Játék állása</p>
     <div class="scores">
-
-        <p class="tag" id="player-nametag">Játékos</p>
-        Nyert:
-        <span id="player-won">0</span><br>
-        Vesztett:
-        <span id="player-lost">0</span><br><br>
-        <p class="tag" id="comp-nametag">Gép</p>
-        Nyert:
-        <span id="comp-won">0</span><br>
-        Veszített:
-        <span id="comp-lost">0</span><br><br>
-        Döntetelen:
-        <span id="draw">0</span>
+        <div class="tag">
+            Játékos<span id="player-crown"></span><br>
+        </div>
+        
+        Győzelem:<span id="player-won">0</span><br>
+        Vereség:<span id="player-lost">0</span><br><br>
+        <div class="tag">
+            Gép<span id="comp-crown"></span><br>
+        </div>
+        
+        Győzelem:<span id="comp-won">0</span><br>
+        Vereség:<span id="comp-lost">0</span><br><br>
+        Döntetelen:<span id="draw">0</span>
     </div>
 
     <div class="result">
@@ -39,17 +39,21 @@
 
     <div class="choices">
         <div class="choice" id="rock">
-            <img src="assets/rock.png" alt="">
+            <img src="assets/rock.png" alt="rock">
         </div>
         <div class="choice" id="paper">
-            <img src="assets/paper.png" alt="">
+            <img src="assets/paper.png" alt="paper">
         </div>
         <div class="choice" id="scissors">
-            <img src="assets/scissors.png" alt="">
+            <img src="assets/scissors.png" alt="scissors">
         </div>
     </div>
 
     <script src="app.js"></script>
 </body>
+
+<footer>
+    Mándi Ákos - 2020.04.15.
+</footer>
 
 </html>

@@ -14,19 +14,19 @@ var result_div = document.querySelector(".result");
 var rock_div = document.getElementById("rock");
 var paper_div = document.getElementById("paper");
 var scissors_div = document.getElementById("scissors");
-var playerNameTag_p = document.getElementById("player-nametag");
-var compNameTag_p = document.getElementById("comp-nametag");
+var playerCrown_span = document.getElementById("player-crown");
+var compCrown_span = document.getElementById("comp-crown");
 
 function EndGame(option) {
     if (compWon > playerWon) {
-        compNameTag_p.innerHTML = "Gép 👑";
+        compCrown_span.innerHTML = "👑";
     }
     else if (playerWon > compWon) {
-        playerNameTag_p.innerHTML = "Játékos 👑";
+        playerCrown_span.innerHTML = "👑";
     }
     else {
-        playerNameTag_p.innerHTML = "Játékos";
-        compNameTag_p.innerHTML = "Gép";
+        compCrown_span.innerHTML = "";
+        playerCrown_span.innerHTML = "";
     }
 
     setTimeout(() => {
@@ -56,7 +56,7 @@ function PlayerWin(compChoice) {
     compLost_span.innerHTML = compLost;
     result_div.style.opacity = 0;
     setTimeout(() => {
-        result_div.innerHTML = "Nyertél!<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott";
+        result_div.innerHTML = "Nyertél!<br>Az ellenfél<u>" + Translate(compChoice) + "</u>választott";
         result_div.style.opacity = 1;
     }, 300)
     EndGame();
@@ -68,7 +68,7 @@ function PlayerLose(compChoice) {
     compWon_span.innerHTML = compWon;
     result_div.style.opacity = 0;
     setTimeout(() => {
-        result_div.innerHTML = "Vesztettél!<br>Az ellenfél<b>" + Translate(compChoice) + "</b>választott";
+        result_div.innerHTML = "Vesztettél!<br>Az ellenfél<u>" + Translate(compChoice) + "</u>választott";
         result_div.style.opacity = 1;
     }, 300)
     EndGame();
@@ -78,7 +78,7 @@ function Draw(compChoice) {
     draw_span.innerHTML = draw;
     result_div.style.opacity = 0;
     setTimeout(() => {
-        result_div.innerHTML = "Döntetlen.<br>Az ellenfél is<b>" + Translate(compChoice) + "</b>választott";
+        result_div.innerHTML = "Döntetlen.<br>Az ellenfél is<u>" + Translate(compChoice) + "</u>választott";
         result_div.style.opacity = 1;
     }, 300)
     EndGame();
@@ -111,7 +111,6 @@ function PlayGame(playerChoice) {
     }
 }
 
-function main() {
     rock_div.addEventListener('click', function () {
         PlayGame("rock");
     })
@@ -123,6 +122,3 @@ function main() {
     scissors_div.addEventListener('click', function () {
         PlayGame("scissors");
     });
-}
-
-main();
