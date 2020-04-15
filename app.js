@@ -56,7 +56,7 @@ function PlayerWin(compChoice) {
     compLost_span.innerHTML = compLost;
     result_div.style.opacity = 0;
     setTimeout(() => {
-        result_div.innerHTML = "Nyertél!<br>Az ellenfél<u>" + Translate(compChoice) + "</u>választott";
+        result_div.innerHTML = "Nyertél!<br>Az ellenfél<u><b>" + Translate(compChoice) + "</u></b>választott";
         result_div.style.opacity = 1;
     }, 300)
     EndGame();
@@ -68,7 +68,7 @@ function PlayerLose(compChoice) {
     compWon_span.innerHTML = compWon;
     result_div.style.opacity = 0;
     setTimeout(() => {
-        result_div.innerHTML = "Vesztettél!<br>Az ellenfél<u>" + Translate(compChoice) + "</u>választott";
+        result_div.innerHTML = "Vesztettél!<br>Az ellenfél<u><b>" + Translate(compChoice) + "</u></b>választott";
         result_div.style.opacity = 1;
     }, 300)
     EndGame();
@@ -78,7 +78,7 @@ function Draw(compChoice) {
     draw_span.innerHTML = draw;
     result_div.style.opacity = 0;
     setTimeout(() => {
-        result_div.innerHTML = "Döntetlen.<br>Az ellenfél is<u>" + Translate(compChoice) + "</u>választott";
+        result_div.innerHTML = "Döntetlen.<br>Az ellenfél is<u><b>" + Translate(compChoice) + "</u></b>választott";
         result_div.style.opacity = 1;
     }, 300)
     EndGame();
